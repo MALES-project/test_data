@@ -1,7 +1,11 @@
 img*
 all*
 Model*
+result_pl*
+t*pickle
 
 speckles/img*
 speckles/all*
 speckles/Model*
+speckles/result_pl*
+speckles/t*pickle
