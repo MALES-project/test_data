@@ -6,7 +6,7 @@ speckle:
   z: 0
   L: 40e3
   original_res: 105
-  datadirectory: /home/simone/Dropbox/eScience_projects/MALES-project/MALES_Dataset4
+  datadirectory: tests/test_data
 preproc:
   polresize: 105
   polarize: false
@@ -32,15 +32,14 @@ noise:
   bit: 12 # bit level (sample depth)
   discretize: off # Whether to discretize the output ('on' or 'off').
 model:
-  name: Model_av
-  type: resnet152
+  name: Model_test2
   type: resnet18
-#  type: scnnC6
+#  type: scnnC4
   signal_noise_r: 37/6
   save_every: 10
   pretrained: true
 hyppar:
-  maxepochs: 10
+  maxepochs: 3
   ttsplit: 0.2
   batch_size: 16
   lr: 0.0001
@@ -61,22 +60,14 @@ loss:
   Scintillation_w: 0
   Scintillation_ms: 0
 scnn:
-  KERNEL_SIZES: [9, 7, 7, 7]
-  PADDINGS: [2, 1, 1, 1]
-  STRIDES: [2, 1, 1, 1]
-  FEATURE_FIELDS: [16, 32, 32, 32]
-  POOL_INDICES: [1, 3]
-  SIGMA: [0.66, 0.66]
-  POOL_STRIDES: [2, 2]
-  POOL_PADDINGS: [0, 0]
-  #KERNEL_SIZES: [9, 7, 7]
-  #PADDINGS: [2, 1, 1]
-  #STRIDES: [2, 1,  1]
-  #FEATURE_FIELDS: [16, 32, 32]
-  #POOL_INDICES: [2]
-  #SIGMA: [0.66]
-  #POOL_STRIDES: [2]
-  #POOL_PADDINGS: [0]
+  KERNEL_SIZES: [9, 7, 7]
+  PADDINGS: [2, 1, 1]
+  STRIDES: [2, 1,  1]
+  FEATURE_FIELDS: [16, 32, 32]
+  POOL_INDICES: [2]
+  SIGMA: [0.66]
+  POOL_STRIDES: [2]
+  POOL_PADDINGS: [0]
 final_block:
   - type: Dropout
     p: 0.2
@@ -98,6 +89,5 @@ final_block:
   - type: Linear
     in_features: 1024
     out_features: nscreens
-  #- type: Hardsigmoid
   - type: Sigmoid
 
