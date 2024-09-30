@@ -6,7 +6,7 @@ speckle:
   z: 0
   L: 40e3
   original_res: 105
-  datadirectory: tests/test_data
+  datadirectory: tests/test_data/speckles
 preproc:
   polresize: 105
   polarize: false
