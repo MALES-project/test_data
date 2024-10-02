@@ -20,6 +20,7 @@ preproc:
   normalization: lin
   img_normalization: false
   dataname: all_images_scnn.pt
+  J_details: true
   Fried_details: true
 noise:
   D: 1 # Fraction of field
