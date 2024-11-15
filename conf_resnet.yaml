@@ -3,8 +3,6 @@ speckle:
   hArray: [0.1, 300, 650, 1e3, 2e3, 5e3, 10e3, 20e3, 40e3]
   splits: [150, 475, 825, 1500, 3500, 7500, 15000, 30000]
   lambda: 550
-  z: 0
-  L: 40e3
   original_res: 105
   datadirectory: tests/test_data/speckles
 preproc:
@@ -61,6 +59,8 @@ loss:
   Rytov: 0
   Scintillation_w: 0
   Scintillation_ms: 0
+val_loss:
+  Fried: 1
 scnn:
   KERNEL_SIZES: [9, 7, 7]
   PADDINGS: [2, 1, 1]
